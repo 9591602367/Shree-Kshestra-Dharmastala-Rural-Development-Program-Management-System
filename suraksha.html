@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head><title>View Suraksha</title>
+    <style>
+        table {
+      border-collapse: collapse;
+      width: 60%;
+      border: 1px solid black;
+  }
+  th, td {
+      padding: 10px;
+      text-align: center;
+      border: 1px solid black;
+      font-size: 20px;
+  }
+  th {
+      background-color: #4CAF50; /* Green background */
+      color: white; /* White text */
+  }
+  td {
+      background-color: #f2f2f2; /* Light gray background */
+      color: black; /* Black text */
+  }
+   h1{
+    color:white;
+    background: linear-gradient( 135deg,rgb(232, 75, 75),rgb(73, 73, 242));
+    margin-left: 40%;
+    margin-right: 40%;
+    border-radius: 6px;
+  }
+    </style>
+    </head>
+<body><center>
+    <h1>Suraksha Records</h1>
+    <table border="1">
+        <tr>
+            <th>Member ID</th>
+            <th>Suraksha No</th>
+            <th>Group ID</th>
+            <th>Amount Paid</th>
+            <th>Dependants</th>
+            <th>Start Date</th>
+            <th>End Date</th>
+        </tr>
+        {% for row in data %}
+        <tr>
+            <td>{{ row.Member_ID }}</td>
+            <td>{{ row.Suraksha_No }}</td>
+            <td>{{ row.Group_id }}</td>
+            <td>{{ row.Amount_Paid }}</td>
+            <td>{{ row.No_Of_Dependants }}</td>
+            <td>{{ row.start_date }}</td>
+            <td>{{ row.end_date }}</td>
+        </tr>
+        {% endfor %}
+    </table></center>
+</body>
+</html>

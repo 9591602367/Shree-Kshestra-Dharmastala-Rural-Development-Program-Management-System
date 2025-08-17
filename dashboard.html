@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            display: flex;
+            background: linear-gradient(to right, #222, #444);
+            color: white;
+        }
+
+        .sidebar {
+            width: 230px;
+            height: 100vh;
+            background: rgba(0, 0, 0, 0.7);
+            backdrop-filter: blur(15px);
+            padding: 20px;
+            position: fixed;
+        }
+
+        .sidebar h2 {
+            text-align: center;
+        }
+
+        .sidebar ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .sidebar ul li {
+            padding: 12px;
+            cursor: pointer;
+            transition: 0.3s ease;
+        }
+
+        .sidebar ul li a:hover {
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 5px;
+        }
+
+        .content {
+            margin-left: 280px;
+            display: flex;
+            gap: 20px;
+            padding: 20px;
+            flex-wrap: wrap;
+        }
+
+        .card {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 20px;
+            border-radius: 12px;
+            width: 200px;
+            text-align: center;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        .progress-container {
+            width: 100%;
+            background-color: rgba(255, 255, 255, 0.1);
+            border-radius: 12px;
+            overflow: hidden;
+        }
+
+        .progress-bar {
+            width: 75%;
+            height: 20px;
+            background: linear-gradient(to right, #ff6a00, #ee0979);
+            border-radius: 12px;
+        }
+        
+        a {
+            display: block;
+            color: white;
+            width: fit-content;
+            text-decoration: none;
+            border-radius: 4px;
+        }
+        .danger {
+            background-color: #e74c3c;
+        }
+        .danger:hover {
+            background-color: #c0392b;
+        }
+
+    </style>
+</head>
+<body>
+
+    <div class="sidebar">
+        <h2>Dashboard</h2>
+        <ul>
+            <li><a href="/add_group">🏠 Home</a></li>
+            <li><a href="/add_group">👥 Add Group</a></li>
+            <li><a href="/add_member">👤 Add Member</a></li>
+            <li><a href="/add_savings">💰 Add Weekly Savings</a></li>
+            <li><a href="/add_loan">💳 Add Loan</a></li>
+            <li><a href="/loan_settlement">📈 Loan Settlements</a></li>
+            <li><a href="/members">🔍 View Members</a></li>
+            <li><a href="/groups">🏦 View Groups</a></li>
+            <li><a href="/view_savings">💼 View Savings</a></li>
+            <li><a href="/loans">📄 View Loans</a></li>
+            <li><a href="{{ url_for('add_suraksha') }}">📄 Add Suraksha Record</a></li>
+            <li><a href="{{ url_for('view_suraksha') }}">💼 View Suraksha Records</a></li>
+            <li><a href="/logout" class="danger">🚪 Logout</a></li>
+        </ul>
+    </div>
+
+    <div class="content">
+        <div class="card">
+            <h3>Loans</h3>
+            <p>₹{{ loan_count }}</p>
+        </div>
+        <div class="card">
+            <h3>Members</h3>
+            <p>{{ member_count }}</p>
+        </div>
+        <div class="card">
+            <h3>Savings</h3>
+            <p>₹{{ total_savings }}</p>
+        </div>
+
+        <div class="card">
+            <h3>Suraksha Records Progress</h3>
+            <div class="progress-container">
+                <div class="progress-bar"></div>
+            </div>
+            <p>{{ insurance_percentage }}% Completed</p>
+        </div>
+    </div>
+
+</body>
+</html>

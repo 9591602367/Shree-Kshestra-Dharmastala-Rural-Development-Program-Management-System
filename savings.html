@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Member Savings</title>
+    <style>
+        table {
+      border-collapse: collapse;
+      width: 60%;
+      border: 1px solid black;
+  }
+  th, td {
+      padding: 10px;
+      text-align: center;
+      border: 1px solid black;
+      font-size: 20px;
+  }
+  th {
+      background-color: #4CAF50; /* Green background */
+      color: white; /* White text */
+  }
+  td {
+      background-color: #f2f2f2; /* Light gray background */
+      color: black; /* Black text */
+  }
+   h1{
+    color:white;
+    background: linear-gradient( 135deg,rgb(232, 75, 75),rgb(73, 73, 242));
+    margin-left: 40%;
+    margin-right: 40%;
+    border-radius: 6px;
+  }
+    </style>
+</head>
+<body>
+  <center>  <h1>Member Savings</h1>
+    <table border="1">
+        <tr>
+            <th>Member ID</th>
+            <th>Weekly savings</th>
+            <th>Total Savings</th>
+        </tr>
+        {% for r in savings %}
+        <tr>
+            <td>{{ r.Member_ID }}</td>
+            <td>{{ r.savings_per_week }}</td>
+            <td>{{ r.saving_amount }}</td>
+        </tr>
+        {% endfor %}
+    </table><br>
+    <a href="/dashboard">Back to Dashboard</a></center>
+</body>
+</html>

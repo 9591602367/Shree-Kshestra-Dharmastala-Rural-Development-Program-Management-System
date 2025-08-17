@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Groups</title>
+</head>
+<style>
+  table {
+      border-collapse: collapse;
+      width: 50%;
+      border: 1px solid black;
+  }
+  th, td {
+      padding: 10px;
+      text-align: center;
+      border: 1px solid black;
+      font-size: 20px;
+  }
+  th {
+      background-color: #4CAF50; /* Green background */
+      color: white; /* White text */
+  }
+  td {
+      background-color: #f2f2f2; /* Light gray background */
+      color: black; /* Black text */
+  }
+
+  
+  h1{
+    color:white;
+    background: linear-gradient( 135deg,rgb(232, 75, 75),rgb(73, 73, 242));
+    margin-left: 40%;
+    margin-right: 40%;
+    border-radius: 6px;
+  }
+    </style>
+</style>
+<body>
+    <center><h1>Groups</h1>
+    <table border="1">
+        <tr>
+            <th>Group ID</th>
+            <th>Group Name</th>
+        </tr>
+        {% for g in groups %}
+        <tr>
+            <td>{{ g.Group_id }}</td>
+            <td>{{ g.Group_name }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+    <br>
+    <a href="/dashboard">← Back to Dashboard</a></center>
+</body>
+</html>

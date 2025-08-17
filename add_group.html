@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Add Group</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: linear-gradient(135deg, #f6d365 0%, #fda085 100%);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+    .container {
+      background-color: #fff;
+      width: 350px;
+      padding: 30px;
+      border-radius: 15px;
+      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+      animation: fadeIn 0.8s ease-out;
+      text-align: center;
+    }
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(-10px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+    .container h1 {
+      margin-bottom: 20px;
+      color: #333;
+      font-size: 1.8em;
+    }
+    .container label {
+      display: block;
+      text-align: left;
+      margin-bottom: 8px;
+      color: #555;
+      font-weight: bold;
+    }
+    .container input[type="text"] {
+      width: 100%;
+      padding: 12px;
+      margin-bottom: 20px;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      transition: border-color 0.3``s;
+      outline: none;
+    }
+    .container input[type="text"]:focus {
+      border-color: #007BFF;
+    }
+    .container button {
+      width: 100%;
+      padding: 12px;
+      background-color: #007BFF;
+      border: none;
+      border-radius: 8px;
+      color: #fff;
+      font-size: 1em;
+      cursor: pointer;
+      transition: background-color 0.3s, transform 0.3s;
+    }
+    .container button:hover {
+      background-color: #0056b3;
+      transform: translateY(-2px);
+    }
+    .container a {
+      display: block;
+      margin-top: 20px;
+      text-decoration: none;
+      color: #007BFF;
+      font-size: 0.9em;
+    }
+    .container a:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Add Group</h1>
+    <form method="POST">
+      <label for="group-id">Group ID:</label>
+      <input type="text" id="group_id" name="group_id">
+
+      <label for="group-name">Group Name:</label>
+      <input type="text" id="group_name" name="group_name">
+
+      <button type="submit">Add Group</button>
+    </form>
+    <a href="dashboard">Back to Dashboard</a>
+  </div>
+</body>
+</html>

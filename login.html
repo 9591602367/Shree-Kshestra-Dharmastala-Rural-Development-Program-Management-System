@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Login</title>
+    <style>
+     body {
+      margin: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: linear-gradient(135deg, #8E2DE2, #4A00E0);
+      color: white;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+    .container {
+      background-color: #fff;
+      width: 350px;
+      padding: 30px;
+      border-radius: 15px;
+      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+      animation: fadeIn 0.8s ease-out;
+      text-align: center;
+    }
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(-10px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+    .container h1 {
+      margin-bottom: 20px;
+      color: #333;
+      font-size: 1.8em;
+    }
+    .container label {
+      display: block;
+      text-align: left;
+      margin-bottom: 8px;
+      color: #555;
+      font-weight: bold;
+    }
+    .container input{
+      width: 92%;
+      padding: 12px;
+      margin-bottom: 20px;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      transition: border-color 0.3s;
+      outline: none;
+    }
+    .container input:focus {
+      border-color: #007BFF;
+    }
+    .container input[type="submit"] {
+      width: 100%;
+      padding: 12px;
+      background-color: #007BFF;
+      border: none;
+      border-radius: 8px;
+      color: #fff;
+      font-size: 1em;
+      cursor: pointer;
+      transition: background-color 0.3s, transform 0.3s;
+    }
+    .container button:hover {
+      background-color: #0056b3;
+      transform: translateY(-2px);
+    }
+    .container a {
+      display: block;
+      margin-top: 20px;
+      text-decoration: none;
+      color: #007BFF;
+      font-size: 0.9em;
+    }
+    .container a:hover {
+      text-decoration: underline;
+    }
+    </style>
+</head>
+<body><center>
+    <div class="container">
+    <h1>Login</h1>
+    <form method="post">
+        <label>UserID: <input type="text" name="username" required></label>
+        <label>Password: <input type="password" name="password" required></label>
+        <input type="submit" value="Login">
+    </form></div></center>
+</body>
+</html>

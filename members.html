@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Members List</title>
+    <style>
+   table {
+      border-collapse: collapse;
+      width: 80%;
+      border: 1px solid black;
+      
+  }
+  th, td {
+      padding: 10px;
+      text-align: center;
+      border: 1px solid black;
+      font-size: 20px;
+  }
+  th {
+      background-color: #4CAF50; /* Green background */
+      color: white; /* White text */
+  }
+  td {
+      background-color: #f2f2f2; /* Light gray background */
+      color: black; /* Black text */
+  }
+   h1{
+    color:white;
+    background: linear-gradient( 135deg,rgb(232, 75, 75),rgb(73, 73, 242));
+    margin-left: 40%;
+    margin-right: 40%;
+    border-radius: 6px;
+  }
+
+    </style>
+</head>
+<body>
+   <center><h1>Members</h2>
+    <table border="2">
+        <tr>
+            <th>Member ID</th>
+            <th>Name</th>
+            <th>Gender</th>
+            <th>Phone</th>
+            <th>Group ID</th>
+        </tr>
+        {% for m in members %}
+        <tr>
+            <td>{{ m.Member_ID }}</td>
+            <td>{{ m.MName }}</td>
+            <td>{{ m.Gender }}</td>
+            <td>{{ m.Phone_no }}</td>
+            <td>{{ m.Group_id }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+    <br>
+    <a href="/dashboard">← Back to Dashboard</a></center>
+</body>
+</html>

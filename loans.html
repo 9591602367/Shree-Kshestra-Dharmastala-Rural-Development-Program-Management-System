@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Loan Details</title>
+    <style>
+        table {
+            border-collapse: collapse;
+            width: 90%;
+            margin: 20px auto;
+        }
+
+        th, td {
+            border: 1px solid #ccc;
+            padding: 8px 12px;
+            text-align: center;
+            font-size: 20px;
+        }
+
+        th {
+            background-color: #4CAF50;
+            color: white;
+        }
+
+        h1{
+           color:white;
+           background: linear-gradient( 135deg,rgb(232, 75, 75),rgb(73, 73, 242));
+           margin-left: 40%;
+           margin-right: 40%;
+           border-radius: 6px;
+    }
+    </style>
+</head>
+<body><center>
+    <h1>Loan Details</h1>
+    <table>
+        <tr>
+            <th>Member ID</th>
+            <th>Name</th>
+            <th>Loan Amount</th>
+            <th>Final Settlement Amount</th>
+            <th>Loan Term</th>
+            <th>EWI</th>
+            <th>Amount Paid</th>
+            <th>Amount Remaining</th>
+        </tr>
+        {% for loan in loans %}
+        <tr>
+            <td>{{ loan.Member_ID }}</td>
+            <td>{{ loan.MName }}</td>
+            <td>{{ loan.loan_amount }}</td>
+            <td>{{ loan.final_settlement_amount }}</td>
+            <td>{{ loan.loan_term }}</td>
+            <td>{{ loan.ewi }}</td>
+            <td>{{ loan.amount_paid}}</td>
+            <td>{{ loan.amount_remaining}}</td>
+        </tr>
+        {% endfor %}
+    </table></center>
+</body>
+</html>
